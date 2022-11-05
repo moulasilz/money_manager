@@ -1,2 +1,2 @@
-# money_manager
-Simple Money Manager Application
+## money_manager
+#Simple Money Manager Application
