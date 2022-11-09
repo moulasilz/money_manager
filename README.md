@@ -1,2 +1,2 @@
 ## money_manager
-#Simple Money Manager Application
+#Simple Money Manager Android Application
