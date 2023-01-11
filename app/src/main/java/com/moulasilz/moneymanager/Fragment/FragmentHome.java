@@ -13,7 +13,10 @@ import androidx.fragment.app.Fragment;
 public class FragmentHome extends Fragment {
     View view;
     int color;
-
+    @SuppressWarnings("unused")
+    public static FragmentHome newInstance(int color){
+        return new FragmentHome(color);
+    }
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

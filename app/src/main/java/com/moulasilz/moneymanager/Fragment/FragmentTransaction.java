@@ -30,18 +30,17 @@ public class FragmentTransaction extends Fragment {
     public FragmentTransaction() {
     }
 
-//    @SuppressWarnings("unused")
+/*    @SuppressWarnings("unused")
 //    public static FragmentTransaction newInstance(int columnCount) {
 //        FragmentTransaction fragment = new FragmentTransaction();
 //        Bundle args = new Bundle();
 //        args.putInt(ARG_COLUMN_COUNT, columnCount);
 //        fragment.setArguments(args);
 //        return fragment;
-//    }
+//    }*/
     @SuppressWarnings("unused")
     public static FragmentTransaction newInstance() {
-        FragmentTransaction fragment = new FragmentTransaction();
-        return fragment;
+        return new FragmentTransaction();
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
