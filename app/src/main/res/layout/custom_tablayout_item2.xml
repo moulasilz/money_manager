@@ -5,6 +5,7 @@
     android:layout_height="fill_parent"
     android:text="personal"
     android:textAllCaps="false"
+
     android:icon="@drawable/ic_baseline_home_24"
     >
 
