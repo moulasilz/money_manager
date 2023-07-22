@@ -1,15 +1,17 @@
-package com.moulasilz.moneymanager.Fragment;
+package com.moulasilz.moneymanager.Adapter;
 
+import android.net.Uri;
+import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.moulasilz.moneymanager.Fragment.placeholder.PlaceholderContent.PlaceholderItem;
+import com.moulasilz.moneymanager.Adapter.Placeholder.PlaceholderContent.PlaceholderItem;
 import com.moulasilz.moneymanager.databinding.FragmentTransactionBinding;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -36,6 +38,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
+        if(mValues.get(position).imageUri != null)
+            holder.mImageView.setImageURI(mValues.get(position).imageUri);
     }
 
     @Override
@@ -47,11 +51,13 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public final TextView mIdView;
         public final TextView mContentView;
         public PlaceholderItem mItem;
+        public final ImageView mImageView;
 
         public ViewHolder(FragmentTransactionBinding binding) {
             super(binding.getRoot());
             mIdView = binding.itemNumber;
             mContentView = binding.content;
+            mImageView = binding.image;
         }
 
         @Override

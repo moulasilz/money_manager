@@ -10,4 +10,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_green">#75FF00</color>
     <color name="green">#00FF00</color>
+    <color name="teal_green">#10EDC5</color>
+    <color name="deep_blue">#292787</color>
 </resources>

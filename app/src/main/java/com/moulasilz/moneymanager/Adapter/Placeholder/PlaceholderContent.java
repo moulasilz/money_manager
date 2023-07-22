@@ -1,4 +1,7 @@
-package com.moulasilz.moneymanager.Fragment.placeholder;
+package com.moulasilz.moneymanager.Adapter.Placeholder;
+
+import android.net.Uri;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +41,14 @@ public class PlaceholderContent {
     }
 
     private static PlaceholderItem createPlaceholderItem(int position) {
-        return new PlaceholderItem(String.valueOf(position), "Item " + position, makeDetails(position));
+        Uri imageUri;
+        if (position % 2 != 0){
+            imageUri = Uri.withAppendedPath(Uri.EMPTY, "[document, image:1000000348]");
+        } else imageUri = null;
+        return new PlaceholderItem(String.valueOf(position),
+                            "Item " + position,
+                                    makeDetails(position),
+                                    imageUri);
     }
 
     private static String makeDetails(int position) {
@@ -49,7 +59,11 @@ public class PlaceholderContent {
         }
         return builder.toString();
     }
+    public static void changeImage(String position, Uri imageUri){
 
+        ITEM_MAP.get(position).imageUri = new Uri.Builder().build();
+        ITEM_MAP.get(position).imageUri = imageUri;
+    }
     /**
      * A placeholder item representing a piece of content.
      */
@@ -57,11 +71,13 @@ public class PlaceholderContent {
         public final String id;
         public final String content;
         public final String details;
+        public Uri imageUri;
 
-        public PlaceholderItem(String id, String content, String details) {
+        public PlaceholderItem(String id, String content, String details , Uri imageUri) {
             this.id = id;
             this.content = content;
             this.details = details;
+            this.imageUri = imageUri;
         }
 
         @Override

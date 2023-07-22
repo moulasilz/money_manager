@@ -68,10 +68,10 @@ public class CollectionViewPagerFragment extends Fragment {
         list.put(3, new tabElement("More", R.drawable.ic_baseline_more_horiz_24));
 
         demoCollectionAdapter = new FragmentStateViewAdapter(this);
-        demoCollectionAdapter.addFragment(FragmentHome.newInstance(R.color.transparent), "");
+        demoCollectionAdapter.addFragment(FragmentHome.newInstance(), "");
         demoCollectionAdapter.addFragment(FragmentTransaction.newInstance(), "");
-        demoCollectionAdapter.addFragment(FragmentHome.newInstance(R.color.transparent), "");
-        demoCollectionAdapter.addFragment(FragmentHome.newInstance(R.color.transparent), "");
+        demoCollectionAdapter.addFragment(FragmentHome.newInstance(), "");
+        demoCollectionAdapter.addFragment(FragmentOpenFile.newInstance(), "");
         viewPager.setAdapter(demoCollectionAdapter);
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) ->

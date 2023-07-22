@@ -12,8 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.moulasilz.moneymanager.Adapter.MyItemRecyclerViewAdapter;
 import com.moulasilz.moneymanager.R;
-import com.moulasilz.moneymanager.Fragment.placeholder.PlaceholderContent;
+import com.moulasilz.moneymanager.Adapter.Placeholder.PlaceholderContent;
 
 /**
  * A fragment representing a list of Items.
@@ -30,14 +31,14 @@ public class FragmentTransaction extends Fragment {
     public FragmentTransaction() {
     }
 
-/*    @SuppressWarnings("unused")
-//    public static FragmentTransaction newInstance(int columnCount) {
-//        FragmentTransaction fragment = new FragmentTransaction();
-//        Bundle args = new Bundle();
-//        args.putInt(ARG_COLUMN_COUNT, columnCount);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }*/
+   @SuppressWarnings("unused")
+    public static FragmentTransaction newInstance(int columnCount) {
+        FragmentTransaction fragment = new FragmentTransaction();
+        Bundle args = new Bundle();
+        args.putInt(ARG_COLUMN_COUNT, columnCount);
+        fragment.setArguments(args);
+        return fragment;
+    }
     @SuppressWarnings("unused")
     public static FragmentTransaction newInstance() {
         return new FragmentTransaction();
@@ -66,6 +67,7 @@ public class FragmentTransaction extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            FragmentOpenFile.recyclerViewTransactions = recyclerView;
         }
         return view;
     }
